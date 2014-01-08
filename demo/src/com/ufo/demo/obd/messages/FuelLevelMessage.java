@@ -33,7 +33,7 @@ public class FuelLevelMessage {
 			this.subMessage_1 = String.valueOf(fuelLevel);
 			this.subMessage_2 = MAIN_MSG_FUEL_NEXT_SUB_MSG;
 		}else{
-			this.background = R.color.configure_background;
+			this.background = R.color.default_tile;
 			this.mainMessage = String.valueOf(fuelLevel);
 			this.subMessage_1 = DEFAULT_MSG;
 			this.subMessage_2 = "";

@@ -47,8 +47,8 @@ public class ObdActivity extends Activity implements VehicleManagerConnectorCall
 	EventAnalayzer mEventAnalyzer;
 	
 	
+	
 	private Latitude.Listener latitudeListener = new Latitude.Listener() {
-		
 		@Override
 		public void receive(Measurement measurement) {
 			final Latitude latitude = (Latitude) measurement;
@@ -57,7 +57,6 @@ public class ObdActivity extends Activity implements VehicleManagerConnectorCall
 	};
 	
 	private Longitude.Listener longitudeListener = new Longitude.Listener() {
-		
 		@Override
 		public void receive(Measurement measurement) {
 			final Longitude longitude = (Longitude) measurement;
@@ -67,7 +66,6 @@ public class ObdActivity extends Activity implements VehicleManagerConnectorCall
 	};
 
 	private EngineSpeed.Listener engineSpeedListener = new EngineSpeed.Listener() {
-		
 		@Override
 		public void receive(Measurement measurement) {
 			final EngineSpeed engineSpeed = (EngineSpeed) measurement;
@@ -78,7 +76,6 @@ public class ObdActivity extends Activity implements VehicleManagerConnectorCall
 
 	
 	private VehicleSpeed.Listener vehicleSpeedListener = new VehicleSpeed.Listener() {
-		
 		@Override
 		public void receive(Measurement measurement) {
 			final VehicleSpeed vehicleSpeed = (VehicleSpeed) measurement;
@@ -131,7 +128,6 @@ public class ObdActivity extends Activity implements VehicleManagerConnectorCall
 	@UiThread
 	public void onVMConnected() {
 		// TODO Auto-generated method stub
-
 		try {
 			mVMmConnector.getVehicleManager().addListener(FuelLevel.class, fuelLevelListener);
 			mVMmConnector.getVehicleManager().addListener(VehicleSpeed.class, vehicleSpeedListener);
@@ -140,10 +136,8 @@ public class ObdActivity extends Activity implements VehicleManagerConnectorCall
 			mVMmConnector.getVehicleManager().addListener(Longitude.class, longitudeListener);
 			mVMmConnector.getVehicleManager().addListener(EngineSpeed.class, engineSpeedListener);
 		} catch (VehicleServiceException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (UnrecognizedMeasurementTypeException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
